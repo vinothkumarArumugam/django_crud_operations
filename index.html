@@ -1,0 +1,28 @@
+<html>
+    <body>
+        {% extends 'crudapp2/base.html' %}
+        {% block content %}
+        <table>
+            <head>
+            <td>member id</td>
+            <td>member name</td>
+            <td>book price</td>
+            <td>member city</td>                                 ####### these are table head as column
+            </head>
+            <tr>
+                {% for i in data %}                          #### data where alll fields value stored
+
+                <td>{{i.member_id}}</td>                     ### id,name,price,city in column 
+                <td>{{i.member_name}}</td>
+                <td>{{i.book_price}}</td>
+                <td>{{i.member_city}}</td>
+                <td><a href='/update/{{i.id}}'>Update</a></td>     ###3 link of update /delete, it will goes to url,then respected view function with ID
+                <td><a href='/delete/{{i.id}}'>Delete</a></td>
+            </tr>
+                 {% endfor %}
+            
+        </table>
+        <a href="/add"><button type='button'>Add New Student</button> </a>     #### link to create new data in fields
+        {% endblock %}
+    </body>
+</html>
