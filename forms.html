@@ -1,0 +1,11 @@
+<html>
+    {% extends 'crudapp2/base.html' %}
+    {% block content %}
+    <form method="POST">
+         {{form.as_p}}       #### this is from views file as_p willl display fields next line
+         {% csrf_token %}    ### it is must it is used for protection
+         <input type="submit" value="add book details">
+    </form>
+    {% endblock %}
+       
+</html>
